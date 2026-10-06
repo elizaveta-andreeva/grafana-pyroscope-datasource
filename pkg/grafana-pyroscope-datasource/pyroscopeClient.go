@@ -33,6 +33,7 @@ type Flamebearer struct {
 	Levels  []*Level
 	Total   int64
 	MaxSelf int64
+	MappingNames []string
 }
 
 type Level struct {
@@ -378,12 +379,17 @@ func profileQuery(flamegraph *querierv1.FlameGraph, profileTypeID string) (*Prof
 		}
 	}
 
+	backend.Logger.Info("pyroscope mapping debug",
+		"names", len(flamegraph.Names),
+		"mappingNames", len(flamegraph.MappingNames))
+
 	return &ProfileResponse{
 		Flamebearer: &Flamebearer{
 			Names:   flamegraph.Names,
 			Levels:  levels,
 			Total:   flamegraph.Total,
 			MaxSelf: flamegraph.MaxSelf,
+			MappingNames: flamegraph.MappingNames,
 		},
 		Units: getUnits(profileTypeID),
 	}, nil
