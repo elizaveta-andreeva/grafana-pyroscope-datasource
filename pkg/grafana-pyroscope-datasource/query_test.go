@@ -130,8 +130,8 @@ func Test_profileToDataFrame(t *testing.T) {
 				{Values: []int64{0, 20, 1, 2}},
 				{Values: []int64{0, 10, 3, 1, 4, 5, 5, 2}},
 			},
-			Total:   987,
-			MaxSelf: 123,
+			Total:        987,
+			MaxSelf:      123,
 			MappingNames: []string{"file1", "file2", "file3"},
 		},
 		Units: "short",
@@ -177,7 +177,7 @@ func Test_levelsToTree(t *testing.T) {
 		}
 
 		tree := levelsToTree(levels, []string{"root", "func1", "func2", "func3", "func1:func4", "func3:func5"},
-							[]string{"", "file1", "file2", "file3", "file1", "file3"})
+			[]string{"", "file1", "file2", "file3", "file1", "file3"})
 		require.Equal(t, &ProfileTree{
 			Start: 0, Value: 100, Level: 0, Name: "root", Mapping: "", Nodes: []*ProfileTree{
 				{
@@ -629,8 +629,8 @@ func (f *FakeClient) GetProfile(ctx context.Context, profileTypeID, labelSelecto
 				{Values: []int64{0, 9, 0, 1}},
 				{Values: []int64{0, 8, 8, 2}},
 			},
-			Total:   100,
-			MaxSelf: 56,
+			Total:        100,
+			MaxSelf:      56,
 			MappingNames: []string{"foo_file", "bar_file", "baz_file"},
 		},
 		Units: "count",
@@ -646,8 +646,8 @@ func (f *FakeClient) GetSpanProfile(ctx context.Context, profileTypeID, labelSel
 				{Values: []int64{0, 9, 0, 1}},
 				{Values: []int64{0, 8, 8, 2}},
 			},
-			Total:   100,
-			MaxSelf: 56,
+			Total:        100,
+			MaxSelf:      56,
 			MappingNames: []string{"foo_file", "bar_file", "baz_file"},
 		},
 		Units: "count",

@@ -29,10 +29,10 @@ type ProfileType struct {
 }
 
 type Flamebearer struct {
-	Names   []string
-	Levels  []*Level
-	Total   int64
-	MaxSelf int64
+	Names        []string
+	Levels       []*Level
+	Total        int64
+	MaxSelf      int64
 	MappingNames []string
 }
 
@@ -381,10 +381,10 @@ func profileQuery(flamegraph *querierv1.FlameGraph, profileTypeID string) (*Prof
 
 	return &ProfileResponse{
 		Flamebearer: &Flamebearer{
-			Names:   flamegraph.Names,
-			Levels:  levels,
-			Total:   flamegraph.Total,
-			MaxSelf: flamegraph.MaxSelf,
+			Names:        flamegraph.Names,
+			Levels:       levels,
+			Total:        flamegraph.Total,
+			MaxSelf:      flamegraph.MaxSelf,
 			MappingNames: flamegraph.MappingNames,
 		},
 		Units: getUnits(profileTypeID),

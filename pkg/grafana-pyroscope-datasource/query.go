@@ -320,20 +320,20 @@ const NAME_OFFSET = 3
 const ITEM_OFFSET = 4
 
 type ProfileTree struct {
-	Start int64
-	Value int64
-	Self  int64
-	Level int
-	Name  string
+	Start   int64
+	Value   int64
+	Self    int64
+	Level   int
+	Name    string
 	Mapping string
-	Nodes []*ProfileTree
+	Nodes   []*ProfileTree
 }
 
 func getMapping(mappingNames []string, idx int64) string {
-    if int(idx) < len(mappingNames) {
-        return mappingNames[int(idx)]
-    }
-    return ""
+	if int(idx) < len(mappingNames) {
+		return mappingNames[int(idx)]
+	}
+	return ""
 }
 
 // levelsToTree converts flamebearer format into a tree. This is needed to then convert it into nested set format
