@@ -379,10 +379,6 @@ func profileQuery(flamegraph *querierv1.FlameGraph, profileTypeID string) (*Prof
 		}
 	}
 
-	backend.Logger.Info("pyroscope mapping debug",
-		"names", len(flamegraph.Names),
-		"mappingNames", len(flamegraph.MappingNames))
-
 	return &ProfileResponse{
 		Flamebearer: &Flamebearer{
 			Names:   flamegraph.Names,
