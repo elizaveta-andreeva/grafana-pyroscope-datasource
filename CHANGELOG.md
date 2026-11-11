@@ -1,5 +1,22 @@
 # Changelog
 
+## 13.0.10
+
+- Fix a connection freeze between Grafana and the plugin under heavy query load by updating google.golang.org/grpc to v1.85.0 ([grpc/grpc-go#9330](https://github.com/grpc/grpc-go/issues/9330))
+- Update frontend dependencies
+
+## 13.0.9
+
+- Bump backend dependency
+
+## 13.0.8
+
+- Update Go to 1.27.3 ([#77](https://github.com/grafana/grafana-pyroscope-datasource/pull/77))
+
+## 13.0.7
+
+- Fix vulnerable transitive dependencies (brace-expansion, basic-ftp)
+
 ## 13.0.6
 
 - Dependency updates ([#65](https://github.com/grafana/grafana-pyroscope-datasource/pull/65)) 
